@@ -2,6 +2,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:newsapp_v1/bloc/bottom_navbar_bloc.dart';
+import 'package:newsapp_v1/screens/tabs/home_screen.dart';
 
 import 'package:newsapp_v1/style/theme.dart' as Style;
 
@@ -43,7 +44,7 @@ class _MainScreenState extends State<MainScreen> {
           builder: (BuildContext context, AsyncSnapshot<NavBarItem> snapshot) {
             switch (snapshot.data) {
               case NavBarItem.HOME:
-                return testScreen();
+                return HomeScreen();
               case NavBarItem.SOURCES:
                 return testScreen();
               case NavBarItem.SEARCH:
