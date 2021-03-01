@@ -20,7 +20,7 @@ class ArticleModel {
         title = json["title"],
         description = json["description"],
         url = json["url"],
-        img = json["img"],
-        date = json["date"],
+        img = json["urlToImage"],
+        date = json["publishedAt"],
         content = json["content"];
 }

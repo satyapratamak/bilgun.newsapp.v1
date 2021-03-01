@@ -1,17 +1,18 @@
 import 'package:newsapp_v1/model/source_model.dart';
 
 class SourceResponse {
-  final List<SourceModel> articles;
+  final List<SourceModel> sources;
   final String error;
 
-  SourceResponse(this.articles, this.error);
+  SourceResponse(this.sources, this.error);
 
   SourceResponse.fromJson(Map<String, dynamic> json)
-      : articles = (json["articles"] as List)
+      : sources = (json["sources"] as List)
             .map((i) => new SourceModel.fromJson(i))
             .toList(),
         error = "";
+
   SourceResponse.withError(String errorValue)
-      : articles = List(),
+      : sources = List(),
         error = errorValue;
 }

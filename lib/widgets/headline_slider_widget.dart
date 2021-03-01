@@ -5,6 +5,7 @@ import 'package:newsapp_v1/elements/error_element.dart';
 import 'package:newsapp_v1/elements/loader_element.dart';
 import 'package:newsapp_v1/model/article_model.dart';
 import 'package:newsapp_v1/model/article_response.dart';
+import 'package:newsapp_v1/screens/news_detail.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class HeadlineSliderWidget extends StatefulWidget {
@@ -57,7 +58,16 @@ class _HeadlineSliderWidgetState extends State<HeadlineSliderWidget> {
     return articles
         .map(
           (article) => GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => NewsDetail(
+                    article: article,
+                  ),
+                ),
+              );
+            },
             child: Container(
               padding: EdgeInsets.only(
                 left: 5.0,

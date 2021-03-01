@@ -46,7 +46,7 @@ class _MainScreenState extends State<MainScreen> {
               case NavBarItem.HOME:
                 return HomeScreen();
               case NavBarItem.SOURCES:
-                return testScreen();
+                return SourceScreen();
               case NavBarItem.SEARCH:
                 return testScreen();
             }
