@@ -64,7 +64,7 @@ class _NewsDetailState extends State<NewsDetail> {
                 alignment: Alignment.topCenter,
                 placeholder: 'assets/img/placeholder.jpg',
                 image: article.img == null
-                    ? "https://img.icons8.com/cute-clipart/64/000000/no-image.png"
+                    ? "https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png"
                     : article.img,
                 fit: BoxFit.cover,
                 width: double.maxFinite,
@@ -109,7 +109,7 @@ class _NewsDetailState extends State<NewsDetail> {
                   height: 5.0,
                 ),
                 Html(
-                  data: article.content,
+                  data: article.content == null ? "" : article.content,
                   renderNewlines: true,
                   defaultTextStyle:
                       TextStyle(fontSize: 14.0, color: Colors.black87),

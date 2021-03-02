@@ -211,7 +211,9 @@ class _SourceDetailState extends State<SourceDetail> {
                     height: 130.0,
                     child: FadeInImage.assetNetwork(
                       placeholder: 'assets/img/placeholder.jpg',
-                      image: articles[index].img,
+                      image: articles[index].img == null
+                          ? "https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png"
+                          : articles[index].img,
                       fit: BoxFit.fitHeight,
                       width: double.maxFinite,
                       height: MediaQuery.of(context).size.height * 1 / 3,

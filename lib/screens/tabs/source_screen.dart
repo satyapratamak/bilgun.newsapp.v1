@@ -4,6 +4,7 @@ import 'package:newsapp_v1/elements/error_element.dart';
 import 'package:newsapp_v1/elements/loader_element.dart';
 import 'package:newsapp_v1/model/source_model.dart';
 import 'package:newsapp_v1/model/source_response.dart';
+import 'package:newsapp_v1/screens/source_detail.dart';
 
 class SourceScreen extends StatefulWidget {
   @override
@@ -54,7 +55,16 @@ class _SourceScreenState extends State<SourceScreen> {
             top: 10.0,
           ),
           child: GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SourceDetail(
+                    source: sources[index],
+                  ),
+                ),
+              );
+            },
             child: Container(
               width: 100.0,
               decoration: BoxDecoration(

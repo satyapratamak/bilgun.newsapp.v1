@@ -15,6 +15,8 @@ class SearchBloc {
   dispose() {
     _subject.close();
   }
+
+  BehaviorSubject<ArticleResponse> get subject => _subject;
 }
 
 final searchBloc = SearchBloc();

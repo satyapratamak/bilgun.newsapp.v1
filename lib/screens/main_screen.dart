@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:newsapp_v1/bloc/bottom_navbar_bloc.dart';
 import 'package:newsapp_v1/screens/tabs/home_screen.dart';
+import 'package:newsapp_v1/screens/tabs/search_screen.dart';
+import 'package:newsapp_v1/screens/tabs/source_screen.dart';
 
 import 'package:newsapp_v1/style/theme.dart' as Style;
 
@@ -48,7 +50,7 @@ class _MainScreenState extends State<MainScreen> {
               case NavBarItem.SOURCES:
                 return SourceScreen();
               case NavBarItem.SEARCH:
-                return testScreen();
+                return SearchScreen();
             }
           },
         ),
