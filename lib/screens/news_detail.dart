@@ -110,9 +110,9 @@ class _NewsDetailState extends State<NewsDetail> {
                 ),
                 Html(
                   data: article.content == null ? "" : article.content,
-                  renderNewlines: true,
-                  defaultTextStyle:
-                      TextStyle(fontSize: 14.0, color: Colors.black87),
+                  // renderNewlines: true,
+                  // defaultTextStyle:
+                  //     TextStyle(fontSize: 14.0, color: Colors.black87),
                 ),
               ],
             ),

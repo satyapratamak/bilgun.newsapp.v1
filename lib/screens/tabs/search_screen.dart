@@ -94,7 +94,8 @@ class _SearchScreenState extends State<SearchScreen> {
             } else if (snapshot.hasError) {
               return Container();
             } else {
-              return buildLoadingWidget();
+              //return buildLoadingWidget();
+              return Container();
             }
           },
         ))
