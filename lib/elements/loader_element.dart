@@ -6,6 +6,7 @@ Widget buildLoadingWidget() {
     child: Column(
       children: [
         CupertinoActivityIndicator(),
+        //CircularProgressIndicator(),
       ],
     ),
   );

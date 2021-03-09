@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:newsapp_v1/bloc/get_top_headlines_bloc.dart';
@@ -17,7 +19,32 @@ class _HeadlineSliderWidgetState extends State<HeadlineSliderWidget> {
   @override
   void initState() {
     super.initState();
+
     getTopHeadlinesBloc..getHeadlines();
+  }
+
+  void _showDialogNoConnection() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('ERROR'),
+        content: SingleChildScrollView(
+          child: ListBody(
+            children: <Widget>[
+              Text('No Internet Access'),
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          TextButton(
+            child: Text('CLOSE'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -31,6 +58,7 @@ class _HeadlineSliderWidgetState extends State<HeadlineSliderWidget> {
           }
           return _buildHeadlinesSlider(snapshot.data);
         } else if (snapshot.hasError) {
+          _showDialogNoConnection();
           return buildErrorWidget(snapshot.error);
         } else {
           return buildLoadingWidget();

@@ -19,7 +19,7 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   void initState() {
     super.initState();
-    searchBloc..search("");
+    searchBloc..search("usa");
   }
 
   @override
@@ -89,13 +89,14 @@ class _SearchScreenState extends State<SearchScreen> {
               if (snapshot.data.error != null &&
                   snapshot.data.error.length > 0) {
                 return Container();
+                //return buildLoadingWidget();
               }
               return _buildSourceNewsWidget(snapshot.data);
             } else if (snapshot.hasError) {
-              return Container();
+              return buildErrorWidget(snapshot.error);
             } else {
-              //return buildLoadingWidget();
-              return Container();
+              return buildLoadingWidget();
+              //return Container();
             }
           },
         ))
@@ -188,7 +189,7 @@ class _SearchScreenState extends State<SearchScreen> {
                             alignment: Alignment.topCenter,
                             placeholder: 'assets/img/placeholder.jpg',
                             image: articles[index].img == null
-                                ? "http://to-let.com.bd/operator/images/noimage.png"
+                                ? "https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png"
                                 : articles[index].img,
                             fit: BoxFit.fitHeight,
                             width: double.maxFinite,
